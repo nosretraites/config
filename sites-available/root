@@ -1,0 +1,12 @@
+server {
+  server_name       reformedesretraites.fr;
+ 
+  root              /home/blog/static;
+  
+  index       index.html;
+  
+  location / {
+    try_files     $uri $uri/ /index.php?$args;
+  }
+}
+
