@@ -6,34 +6,16 @@ server {
   server_name       wp.reformedesretraites.fr;
   listen            80;
 
-  root              /home/blog/wp-test;
-
   include snippets/letsencrypt_challenge_management.conf;
 
-  index       index.php;
-
   location / {
-    try_files     $uri $uri/ /index.php?$args;
+    return          302 https://wp.reformedesretraites.fr;
   }
- 
-  location = /favicon.ico {
-    log_not_found off;
-    access_log    off;
-  }
- 
-  location = /robots.txt {
-    allow                    all;
-    log_not_found off;
-    access_log    off;
-  }
- 
-  location ~ .php$ {
-    include       fastcgi.conf;
-    fastcgi_pass  php-wp-test;
-  }
- 
-  location ~* .(js|css|png|jpg|jpeg|gif|ico)$ {
-    expires       max;
-    log_not_found off;
-  }
+}
+
+server {
+  server_name       wp.reformedesretraites.fr;
+  root              /home/blog/wp-test;
+
+  include snippets/https_php.conf;
 }
