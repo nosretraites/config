@@ -11,7 +11,7 @@ server {
   include snippets/letsencrypt.conf;
 
   index       index.php;
-  
+
   location / {
     try_files     $uri $uri/ /index.php?$args;
   }

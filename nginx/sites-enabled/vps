@@ -6,6 +6,8 @@ server {
   server_name       vps.reformedesretraites.fr;
   listen            80;
 
+  include snippets/letsencrypt.conf;
+
   location / {
     return          302 https://vps.reformedesretraites.fr;
   }
