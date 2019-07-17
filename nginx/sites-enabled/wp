@@ -6,7 +6,7 @@ server {
   server_name       wp.reformedesretraites.fr;
   listen            80;
 
-  root              /home/blog/test;
+  root              /home/blog/wp-test;
 
   include snippets/letsencrypt.conf;
 
