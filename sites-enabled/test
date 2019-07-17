@@ -6,9 +6,6 @@ server {
   server_name       test.reformedesretraites.fr;
   listen            80;
 
-
-  server_name       test.reformedesretraites.fr;
- 
   root              /home/blog/test;
   
   index       index.php;
