@@ -6,7 +6,7 @@ server {
   server_name       test.reformedesretraites.fr;
   listen            80;
 
-  include snippets/letsencrypt.conf;
+  include snippets/letsencrypt_challenge_management.conf;
 
   root              /home/blog/test;
   

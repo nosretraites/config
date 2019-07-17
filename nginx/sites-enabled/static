@@ -2,7 +2,7 @@ server {
   server_name       static.reformedesretraites.fr;
   root              /home/blog/static;
   index       		index.html;
-  include snippets/letsencrypt.conf;
+  include snippets/letsencrypt_challenge_management.conf;
   location / {
     try_files     $uri $uri/ /index.php?$args;
   }

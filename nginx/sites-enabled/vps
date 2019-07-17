@@ -6,7 +6,7 @@ server {
   server_name       vps.reformedesretraites.fr;
   listen            80;
 
-  include snippets/letsencrypt.conf;
+  include snippets/letsencrypt_challenge_management.conf;
 
   location / {
     return          302 https://vps.reformedesretraites.fr;
@@ -15,6 +15,8 @@ server {
 
 server {
 
+  server_name       vps.reformedesretraites.fr;
+  root              /home/blog/test;
 
   listen [::]:443 ssl ipv6only=on; # managed by Certbot
   listen 443 ssl; # managed by Certbot
@@ -24,9 +26,6 @@ server {
   ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 
-  server_name       vps.reformedesretraites.fr;
- 
-  root              /home/blog/test;
   
   index       index.php;
   

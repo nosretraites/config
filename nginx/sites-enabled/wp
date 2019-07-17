@@ -8,7 +8,7 @@ server {
 
   root              /home/blog/wp-test;
 
-  include snippets/letsencrypt.conf;
+  include snippets/letsencrypt_challenge_management.conf;
 
   index       index.php;
 
