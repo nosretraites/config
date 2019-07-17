@@ -1,6 +1,14 @@
 upstream php-wp {
     server            unix:/var/run/wp.sock;
 }
+
+server {
+  server_name       vps.reformedesretraites.fr;
+
+  location / {
+    return            302 https://vps.reformedesretraites.fr;
+  }
+}
  
 server {
 
