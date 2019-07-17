@@ -18,7 +18,7 @@ server {
 
     server_name       vps.reformedesretraites.fr;
  
-    root              /home/blog/blog-test;
+    root              /home/blog/test;
   
   index       index.php;
   
