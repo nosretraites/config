@@ -1,9 +1,21 @@
+
+
+
+
 server {
   server_name       reformedesretraites.fr;
-  root              /home/blog/static;
-  index       		index.html;
+  listen            80;
+
   include snippets/letsencrypt_challenge_management.conf;
+
   location / {
-    try_files     $uri $uri/ /index.php?$args;
+    return          302 https://reformedesretraites.fr;
   }
+}
+
+server {
+  server_name       reformedesretraites.fr;
+  root              /home/blog/wp;
+
+  include snippets/https_php.conf;
 }
