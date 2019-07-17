@@ -4,9 +4,10 @@ upstream php-wp {
 
 server {
   server_name       vps.reformedesretraites.fr;
+  listen            80;
 
   location / {
-    return            302 https://vps.reformedesretraites.fr;
+    return          302 https://vps.reformedesretraites.fr;
   }
 }
  
