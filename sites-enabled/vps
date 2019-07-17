@@ -10,7 +10,7 @@ server {
     return          302 https://vps.reformedesretraites.fr;
   }
 }
- 
+
 server {
 
 
