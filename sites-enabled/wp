@@ -1,0 +1,37 @@
+upstream php-wp-prd {
+    server            unix:/var/run/wp.sock;
+}
+
+server {
+  server_name       wp.reformedesretraites.fr;
+  listen            80;
+
+  root              /home/blog/test;
+  
+  index       index.php;
+  
+  location / {
+    try_files     $uri $uri/ /index.php?$args;
+  }
+ 
+  location = /favicon.ico {
+    log_not_found off;
+    access_log    off;
+  }
+ 
+  location = /robots.txt {
+    allow                    all;
+    log_not_found off;
+    access_log    off;
+  }
+ 
+  location ~ .php$ {
+    include       fastcgi.conf;
+    fastcgi_pass  php-wp-test;
+  }
+ 
+  location ~* .(js|css|png|jpg|jpeg|gif|ico)$ {
+    expires       max;
+    log_not_found off;
+  }
+}
