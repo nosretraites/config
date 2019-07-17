@@ -1,4 +1,4 @@
-upstream php-wp {
+upstream php-wp-test {
     server            unix:/var/run/wp.sock;
 }
 
@@ -30,7 +30,7 @@ server {
  
   location ~ .php$ {
     include       fastcgi.conf;
-    fastcgi_pass  php-wp;
+    fastcgi_pass  php-wp-test;
   }
  
   location ~* .(js|css|png|jpg|jpeg|gif|ico)$ {
