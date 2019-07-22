@@ -3,7 +3,7 @@
 
 
 server {
-  server_name       reformedesretraites.fr;
+  server_name       reformedesretraites.fr default_server;
   listen            80;
 
   include snippets/letsencrypt_challenge_management.conf;
