@@ -9,7 +9,7 @@ server {
   include snippets/letsencrypt_challenge_management.conf;
 
   location / {
-    return          302 https://reformedesretraites.fr;
+    return          302 https://reformedesretraites.fr$request_uri;
   }
 }
 
