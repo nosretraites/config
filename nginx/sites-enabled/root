@@ -3,7 +3,7 @@
 
 
 server {
-  server_name       reformedesretraites.fr default_server;
+  server_name       reformedesretraites.fr www.reformedesretraites.fr default_server;
   listen            80;
 
   include snippets/letsencrypt_challenge_management.conf;
@@ -14,7 +14,7 @@ server {
 }
 
 server {
-  server_name       reformedesretraites.fr;
+  server_name       reformedesretraites.fr www.reformedesretraites.fr;
   root              /home/blog/wp;
 
   include snippets/https_php.conf;
